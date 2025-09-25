@@ -41,5 +41,8 @@ Make sure U2 is being powered by U5 regulator. Different LDOs in that package ha
 
 You can troubleshoot the signal chain by taking the Luma signal and skipping U2 and U1
 
+Since releasing the files I discovered that, while the card works great with my BVM D9, it does not work with 14L5 monitors. My current conclusion is this is because I used the 12v rail to power the regulators. The 12v rail on the D9 is the primary b+ voltage rail, powered by an efficient switch mode converter. On many other monitors like the 14L5, the 12v rail is powered by a 1A linear regulator. I suspect powering the regulators on the card from the 6v rail instead of the 12v rail should fix this, but I have not tested it yet. From digging into the service manuals of other PVM cards, the 6v rail seems to be the primary power source for the power-hungry cards like the HD-SDI card
+
+
 
 
